@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenCycle • Matériel Espaces Verts & Camping</title>
+  <meta name="description" content="Achat & vente de matériel pour espaces verts et campings : neuf, reconditionné et occasion. Plateforme locale + web, dépôt-vente, logistique simplifiée."/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#10b981"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preload" href="assets/logo.svg" as="image">
+  <script defer src="app.js"></script>
+</head>
+<body>
+<header class="wrap header">
+  <img src="assets/logo.svg" alt="GreenCycle" class="logo">
+  <nav>
+    <a href="#catalogue">Catalogue</a>
+    <a href="#vendre">Vendre</a>
+    <a href="admin.html" class="pill">Admin (local)</a>
+  </nav>
+</header>
+
+<section class="hero wrap">
+  <div class="hero-text">
+    <h1>Matériel Espaces Verts & Camping</h1>
+    <p>Neuf, reconditionné ou d’occasion. <strong>Simple, vérifié, durable.</strong></p>
+    <div class="hero-cta">
+      <a href="#catalogue" class="btn">Voir le catalogue</a>
+      <a href="#vendre" class="btn ghost">Déposer un matériel</a>
+    </div>
+    <ul class="badges">
+      <li>✅ Dépôt-vente & reprise</li>
+      <li>🔁 Reconditionné certifié</li>
+      <li>📦 Logistique simplifiée</li>
+    </ul>
+  </div>
+  <img src="assets/placeholder-hero.webp" alt="Matériel espaces verts" class="hero-img"/>
+</section>
+
+<section id="catalogue" class="wrap">
+  <h2>Catalogue</h2>
+  <div class="filters">
+    <input id="q" type="search" placeholder="Rechercher (ex. tondeuse, borne...)" />
+    <select id="cat"></select>
+    <select id="cond">
+      <option value="">Condition</option>
+      <option value="neuf">Neuf</option>
+      <option value="reconditionné">Reconditionné</option>
+      <option value="occasion">Occasion</option>
+    </select>
+    <select id="seg">
+      <option value="">Segment</option>
+      <option value="espaces_verts">Espaces verts</option>
+      <option value="camping">Camping</option>
+    </select>
+    <select id="sort">
+      <option value="relevance">Pertinence</option>
+      <option value="price_asc">Prix ↑</option>
+      <option value="price_desc">Prix ↓</option>
+      <option value="date_desc">Récents</option>
+    </select>
+  </div>
+  <div id="grid" class="grid"></div>
+</section>
+
+<section id="vendre" class="wrap">
+  <h2>Vendre / Déposer un matériel</h2>
+  <p>Pro ou particulier, proposez votre matériel. Réponse rapide.</p>
+  <form id="sellForm" class="card">
+    <div class="row">
+      <label>Nom / Entreprise<input required name="name" placeholder="Votre nom"/></label>
+      <label>Email<input required type="email" name="email" placeholder="email@exemple.com"/></label>
+    </div>
+    <div class="row">
+      <label>Titre du matériel<input required name="title" placeholder="Tondeuse autoportée..."/></label>
+      <label>Catégorie<select name="category" required id="sellCat"></select></label>
+    </div>
+    <div class="row">
+      <label>État<select name="condition" required>
+        <option value="occasion">Occasion</option>
+        <option value="reconditionné">Reconditionné</option>
+        <option value="neuf">Neuf</option>
+      </select></label>
+      <label>Prix proposé (€)<input type="number" name="price" min="0" step="0.01" placeholder="0.00"/></label>
+    </div>
+    <label>Description<textarea name="description" rows="4" placeholder="Détails, année, marque, état..."></textarea></label>
+    <button class="btn" type="submit">Envoyer ma proposition</button>
+    <p class="muted">Les propositions sont stockées localement (démo). Activez l’envoi vers votre email / Google Sheet dans l’admin.</p>
+  </form>
+</section>
+
+<footer class="wrap footer">
+  <p>© <span id="year"></span> GreenCycle — Plateforme circulaire Espaces Verts & Camping.</p>
+</footer>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js").catch(()=>{});
+    });
+  }
+</script>
+</body>
+</html>

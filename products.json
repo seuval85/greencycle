@@ -1,0 +1,50 @@
+[
+  {
+    "sku": "KUB-MTRX-001",
+    "title": "Micro-tracteur Kubota B7001",
+    "brand": "Kubota",
+    "price": 2100.0,
+    "category": "micro_tracteurs",
+    "segment": "espaces_verts",
+    "condition": "reconditionné",
+    "description": "Micro-tracteur compact, parfait pour terrains jusqu’à 5000 m². Révisé, garanti 3 mois.",
+    "image": "assets/placeholder.webp",
+    "created_at": "2025-10-08"
+  },
+  {
+    "sku": "STI-TRN-2018",
+    "title": "Tronçonneuse Stihl MS 170 (2018)",
+    "brand": "Stihl",
+    "price": 160.0,
+    "category": "tronconneuses",
+    "segment": "espaces_verts",
+    "condition": "occasion",
+    "description": "Bon état, chaîne neuve, prête à l’emploi.",
+    "image": "assets/placeholder.webp",
+    "created_at": "2025-10-08"
+  },
+  {
+    "sku": "CAMP-BOR-10",
+    "title": "Borne électrique 10A (lot de 10)",
+    "brand": "ReCamp",
+    "price": 4500.0,
+    "category": "bornes",
+    "segment": "camping",
+    "condition": "reconditionné",
+    "description": "Lot reconditionné, test et nettoyage réalisés. Idéal rénovation camping.",
+    "image": "assets/placeholder.webp",
+    "created_at": "2025-10-08"
+  },
+  {
+    "sku": "MOB-SALON-4P",
+    "title": "Salon extérieur 4 places",
+    "brand": "ReCamp",
+    "price": 290.0,
+    "category": "mobilier",
+    "segment": "camping",
+    "condition": "occasion",
+    "description": "Structure alu, coussins lavés. Prêt à installer.",
+    "image": "assets/placeholder.webp",
+    "created_at": "2025-10-08"
+  }
+]
